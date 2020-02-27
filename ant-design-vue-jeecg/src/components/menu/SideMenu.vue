@@ -145,14 +145,31 @@
 </style>
 
 <!-- update_begin author:sunjianlei date:20190530 for: 选中首页的时候不显示背景颜色 -->
-<style lang="scss">
+<style lang="less">
   .ant-menu.ant-menu-root {
     & > .ant-menu-item:first-child {
-      background-color: white;
+      background-color: transparent;
 
       & > a, & > a:hover {
         color: rgba(0, 0, 0, 0.65);
+      }
 
+      &.ant-menu-item-selected {
+        & > a, & > a:hover {
+          color: @primary-color;
+        }
+      }
+    }
+
+    &.ant-menu-dark > .ant-menu-item:first-child {
+      & > a, & > a:hover {
+        color: rgba(255, 255, 255, 0.65);
+      }
+
+      &.ant-menu-item-selected {
+        & > a, & > a:hover {
+          color: rgba(255, 255, 255, 1);
+        }
       }
     }
   }
